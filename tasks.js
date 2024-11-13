@@ -1,8 +1,14 @@
 const getButton = document.getElementById('get');
 const taskArea = document.getElementById('Tasks');
 const from = document.getElementById('addTask');
+const login = document.getElementById('login');
+const showTask = document.getElementById('showTask');
+const showLogin = document.getElementById('showLogin');
 let taskTitleFromForm = document.getElementById('title');
+let token = null;
 const url = 'http://localhost'
+const auth_url = 'http://localhost/auth/jwt'
+let logedin = false;
 
 async function getTasks() {
     // clear list
@@ -79,6 +85,25 @@ from.addEventListener('submit', async (e) => {
 
     update();
 });
+
+// login.addEventListener('submit', async (e) => {
+//     e.preventDefault();
+
+//     let response = await fetch(auth_url + '/sign', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         }
+//     });
+
+//     let result = response.json();
+//     token = result.headers.get('Authorization');
+
+//     logedin = true;
+
+//     showLogin.style.display = 'none';
+//     showTask.style.display = 'block'
+// });
 
 function update() {
     getTasks();

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +8,30 @@
     <script src="tasks.js" defer></script>
     <title>Projektarbeit</title>
 </head>
-<body>
-    <button id="get">Update List</button>
-    <br>
-    <h2>Add New Task</h2>
-    <form id="addTask">
-        <label for="taskTitle">Title</label>
-        <input type="text" name="taskTitle" id="title">
 
-        <input type="submit" name="submit" id="submit">
-    </form>
-    <div id="Tasks"></div>
+<body>
+    <div id="showtasks" style="display: block;">
+        <button id="get">Update List</button>
+        <br>
+        <h2>Add New Task</h2>
+        <form id="addTask">
+            <label for="taskTitle">Title</label>
+            <input type="text" name="taskTitle" id="title">
+
+            <input type="submit" name="submit" id="submit">
+        </form>
+        <div id="Tasks"></div>
+    </div>
+    <div id="showlogin" style="display: none;">
+        <form id="login">
+            <label for="email">Email</label>
+            <input type="email" name="email">
+
+            <label for="password">Password</label>
+            <input type="password" name="password">
+            <input type="submit">
+        </form>
+    </div>
 </body>
+
 </html>
