@@ -1,0 +1,17 @@
+.done {
+    border: 2px solid rgb(0, 255, 0);
+}
+
+.notDone {
+    border: 2px solid red;
+}
+
+.task {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+}
