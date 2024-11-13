@@ -26,6 +26,7 @@ async function getTasks() {
         // add Buttons
         const editButton = document.createElement('button');
         editButton.innerHTML = "Edit";
+        editButton.setAttribute('onclick', `editTask(${task.id}, '${task.title}')`)
         taskDiv.appendChild(editButton);
         const deleteButton = document.createElement('button');
         deleteButton.innerHTML = "Delete";
@@ -43,7 +44,22 @@ async function getTasks() {
 }
 
 async function deleteTask(taskid) {
-    fetch(url + `/task/${taskid}`,{method: 'DELETE'});
+    await fetch(url + `/task/${taskid}`, {method: 'DELETE'});
+    update();
+}
+
+async function editTask(taskid, tasktitle) {
+    let newtitle = prompt("Titel ändern:", tasktitle);
+    await fetch(url + '/tasks', {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            id: taskid,
+            title: newtitle
+        })
+    });
     update();
 }
 
