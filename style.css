@@ -1,9 +1,9 @@
 .done {
-    border: 2px solid rgb(0, 255, 0);
+    border: 3px solid rgb(0, 255, 0);
 }
 
 .notDone {
-    border: 2px solid red;
+    border: 3px solid red;
 }
 
 .task {
@@ -55,3 +55,80 @@
 #showlogin input[type="submit"]:hover {
     background-color: #0056b3;
 }
+
+h3:hover {
+    cursor: pointer;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+#showtasks {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#showtasks h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #007bff;
+}
+
+#showtasks form {
+    display: flex;
+    flex-direction: column;
+}
+
+#showtasks label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#showtasks input[type="text"],
+#showtasks input[type="submit"] {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#showtasks input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+#showtasks input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+#showtasks button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#showtasks button:hover {
+    background-color: #0056b3;
+}
+
+#Tasks {
+    margin-top: 20px;
+}
+
+

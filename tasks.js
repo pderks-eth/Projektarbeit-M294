@@ -27,6 +27,7 @@ async function getTasks() {
 
         const taskTitle = document.createElement('h3');
         taskTitle.innerHTML = task.title;
+        taskTitle.setAttribute('onclick', `checkTask(${task.id}, ${task.completed}, '${task.title}')`);
         taskDiv.appendChild(taskTitle);
 
         // add Buttons
@@ -39,6 +40,7 @@ async function getTasks() {
         deleteButton.setAttribute('onclick', `deleteTask(${task.id})`);
         taskDiv.appendChild(deleteButton);
 
+        console.log(task.completed, task.id);
         if (task.completed) {
             taskDiv.classList.add('done');
         } else {
@@ -64,6 +66,23 @@ async function editTask(taskid, tasktitle) {
         body: JSON.stringify({
             id: taskid,
             title: newtitle
+        })
+    });
+    update();
+}
+
+async function checkTask(taskid, taskstatus, tasktitle) {
+    let newtaskstatus = !Boolean(taskstatus);
+    console.log(newtaskstatus);
+    await fetch(url + '/tasks', {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            id: taskid,
+            title: tasktitle,
+            completed: newtaskstatus
         })
     });
     update();
